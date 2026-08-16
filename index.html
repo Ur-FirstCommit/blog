@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FirstCommit — stories, ideas, and lessons from people who build.">
+<title>FirstCommit — Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grain"></div>
+<div class="cursor-glow"></div>
+
+<header class="nav">
+  <a class="logo" href="index.html"><span>first</span>commit<span class="dot">.</span></a>
+  <nav>
+    <a href="#latest">Latest</a>
+    <a href="#topics">Topics</a>
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">☼</button>
+    <button id="searchOpen" class="search-pill">⌘ K <span>Search</span></button>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span></span> FIRSTCOMMIT / JOURNAL</div>
+    <h1>Build.<br><i>Learn.</i><br>Ship.</h1>
+    <p>Stories, experiments, ideas, and lessons from people who are actually building things.</p>
+    <div class="hero-actions">
+      <a href="#latest" class="primary-btn">Explore stories <b>↓</b></a>
+      <span class="hero-note">No gatekeeping.<br>Just building.</span>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="ring ring-1"></div><div class="ring ring-2"></div><div class="ring ring-3"></div>
+    <div class="commit-window">
+      <div class="window-bar"><i></i><i></i><i></i><span>firstcommit / terminal</span></div>
+      <div class="terminal">
+        <p><em>$</em> git status</p>
+        <p class="dim">On branch main</p>
+        <p class="green">nothing to commit, working tree clean</p>
+        <p><em>$</em> git commit -m <strong>"ship it"</strong></p>
+        <p class="green">✓ [main 7f3a91c] ship it</p>
+        <p class="dim">1 file changed, 42 insertions(+)</p>
+        <p class="blink">_</p>
+      </div>
+    </div>
+    <div class="float-tag tag-a">01 / BUILD</div>
+    <div class="float-tag tag-b">{ ship: true }</div>
+  </div>
+</section>
+
+<section id="latest" class="content-section">
+  <div class="section-title">
+    <div><span class="kicker">01 / LATEST</span><h2>From the blog</h2></div>
+    <button class="filter-btn" id="filterOpen">Filter <span>↘</span></button>
+  </div>
+  <div id="featured"></div>
+  <div id="posts" class="post-grid"></div>
+  <div id="empty" class="empty hidden">No posts found.</div>
+</section>
+
+<section id="topics" class="topics">
+  <div class="kicker">02 / WHY FIRSTCOMMIT</div>
+  <div class="topic-grid">
+    <div class="topic-intro"><h2>For people who<br><i>actually build.</i></h2></div>
+    <div class="topic-copy"><p>FirstCommit is for beginners, builders, hackers, and curious people who would rather make something than wait until they're “ready.”</p><p>These are the lessons that happen between the first line of code and the final <code>git push</code>.</p></div>
+  </div>
+  <div class="marquee"><span>BUILD · LEARN · BREAK · FIX · SHIP · BUILD · LEARN · BREAK · FIX · SHIP · </span></div>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="index.html"><span>first</span>commit<span class="dot">.</span></a>
+  <span>Make your first commit.</span>
+  <span>© <span id="year"></span> FirstCommit</span>
+</footer>
+
+<div id="searchModal" class="modal hidden">
+  <div class="modal-backdrop"></div>
+  <div class="search-box">
+    <div class="search-head"><span>Search FirstCommit</span><button id="searchClose">ESC</button></div>
+    <input id="searchInput" autocomplete="off" placeholder="Search stories, topics, ideas...">
+    <div id="searchResults"></div>
+  </div>
+</div>
+
+<div id="filterModal" class="modal hidden">
+  <div class="modal-backdrop"></div>
+  <div class="filter-box">
+    <div class="search-head"><span>Filter stories</span><button id="filterClose">ESC</button></div>
+    <div id="categories" class="categories"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

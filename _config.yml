@@ -1,8 +1,0 @@
-title: FirstCommit
-description: Stories, ideas, and lessons from people who build.
-url: "https://blog.firstcommit.xyz"
-baseurl: ""
-markdown: kramdown
-permalink: /:categories/:title/
-plugins:
-  - jekyll-feed
