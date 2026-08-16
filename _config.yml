@@ -1,0 +1,7 @@
+title: FirstCommit
+description: Build. Learn. Ship.
+url: "https://blog.firstcommit.xyz"
+baseurl: ""
+theme: minima
+plugins:
+  - jekyll-feed
