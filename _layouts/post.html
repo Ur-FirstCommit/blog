@@ -1,18 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ page.title }} — {{ site.title }}</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page.title }} — FirstCommit</title>
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-<header><a class="brand" href="{{ '/' | relative_url }}">FirstCommit<span>.</span></a><a href="{{ '/' | relative_url }}">Back</a></header>
-<main class="post">
-<div class="date">{{ page.date | date: "%B %-d, %Y" }}</div>
+<header class="nav"><a class="logo" href="{{ '/' | relative_url }}"><span>first</span>commit<span class="dot">.</span></a><nav><a href="{{ '/' | relative_url }}">← Blog</a><a class="nav-pill" href="https://firstcommit.xyz">firstcommit.xyz ↗</a></nav></header>
+<main class="article-wrap">
+<div class="article-meta"><span class="tag">{{ page.categories | first | default: "BUILDING" }}</span><span>{{ page.date | date: "%B %-d, %Y" }}</span></div>
 <h1>{{ page.title }}</h1>
-{{ content }}
+<div class="article-content">{{ content }}</div>
 </main>
-<footer>© {{ site.time | date: "%Y" }} FirstCommit</footer>
-</body>
-</html>
+<footer><a class="logo" href="{{ '/' | relative_url }}"><span>first</span>commit<span class="dot">.</span></a><span>© {{ site.time | date: "%Y" }} FirstCommit</span></footer>
+</body></html>

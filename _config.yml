@@ -1,7 +1,8 @@
 title: FirstCommit
-description: Build. Learn. Ship.
+description: Stories, ideas, and lessons from people who build.
 url: "https://blog.firstcommit.xyz"
 baseurl: ""
-theme: minima
+markdown: kramdown
+permalink: /:categories/:title/
 plugins:
   - jekyll-feed

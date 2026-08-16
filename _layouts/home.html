@@ -3,26 +3,68 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<title>{{ site.title }} — Blog</title>
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-<header><a class="brand" href="{{ '/' | relative_url }}">FirstCommit<span>.</span></a><a href="{{ '/feed.xml' | relative_url }}">RSS</a></header>
-<main class="hero">
-<p class="eyebrow">FIRSTCOMMIT / BLOG</p>
-<h1>Build. Learn. <em>Ship.</em></h1>
-<p class="intro">{{ site.description }}</p>
-</main>
-<section class="posts">
-{% for post in site.posts %}
-<article>
-<div class="date">{{ post.date | date: "%B %-d, %Y" }}</div>
-<h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-<p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
-<a class="read" href="{{ post.url | relative_url }}">Read post →</a>
-</article>
-{% endfor %}
+<div class="noise"></div>
+<header class="nav">
+  <a class="logo" href="{{ '/' | relative_url }}"><span>first</span>commit<span class="dot">.</span></a>
+  <nav><a href="#latest">Latest</a><a href="#about">About</a><a class="nav-pill" href="https://firstcommit.xyz">firstcommit.xyz ↗</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span></span> THE FIRSTCOMMIT BLOG</div>
+    <h1>Build things.<br><i>Break things.</i><br>Ship things.</h1>
+    <p>Stories, ideas, and lessons from the people who are learning to build the future.</p>
+    <a class="hero-button" href="#latest">Explore the blog <b>↓</b></a>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+    <div class="commit-card">
+      <div class="terminal-top"><b></b><b></b><b></b><span>firstcommit</span></div>
+      <div class="terminal-body"><span class="muted">$</span> git commit -m<br><strong>"ship it"</strong><br><span class="success">✓ 1 commit created</span></div>
+    </div>
+    <div class="floating f1">01</div><div class="floating f2">{"ship": true}</div>
+  </div>
 </section>
-<footer>© {{ site.time | date: "%Y" }} FirstCommit</footer>
+
+<section id="latest" class="latest">
+  <div class="section-head"><div><span class="mini">01 / LATEST</span><h2>From the blog</h2></div><span class="count">{{ site.posts | size | prepend: "0" }} POSTS</span></div>
+  {% assign featured = site.posts.first %}
+  {% if featured %}
+  <a class="featured" href="{{ featured.url | relative_url }}">
+    <div class="featured-main">
+      <span class="tag">FEATURED</span>
+      <h3>{{ featured.title }}</h3>
+      <p>{{ featured.excerpt | strip_html | truncate: 220 }}</p>
+      <span class="read">Read story <b>↗</b></span>
+    </div>
+    <div class="featured-side"><span>FIRST<br>COMMIT</span><div class="arrow">↗</div></div>
+  </a>
+  {% endif %}
+  <div class="grid">
+  {% for post in site.posts offset:1 %}
+    <a class="post-card" href="{{ post.url | relative_url }}">
+      <div class="card-top"><span class="tag">{{ post.categories | first | default: "BUILDING" }}</span><span>{{ post.date | date: "%b %-d, %Y" }}</span></div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      <span class="read">Read <b>→</b></span>
+    </a>
+  {% endfor %}
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="mini">02 / ABOUT</div>
+  <h2>For people who<br><i>actually build.</i></h2>
+  <p>FirstCommit is a community for beginners and builders. This is where we share what we learn along the way — without pretending we knew it all from the start.</p>
+</section>
+</main>
+
+<footer><a class="logo" href="{{ '/' | relative_url }}"><span>first</span>commit<span class="dot">.</span></a><span>Build something. Make your first commit.</span><span>© {{ site.time | date: "%Y" }}</span></footer>
 </body>
 </html>

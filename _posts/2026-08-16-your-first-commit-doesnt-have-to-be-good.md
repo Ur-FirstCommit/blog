@@ -2,8 +2,9 @@
 layout: post
 title: "Your First Commit Doesn't Have to Be Good"
 date: 2026-08-16
+categories: [building]
+excerpt: "Your first project is probably going to be bad. And that's completely fine."
 ---
-
 Your first project is probably going to be bad.
 
 And that's completely fine.
