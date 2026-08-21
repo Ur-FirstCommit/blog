@@ -4,7 +4,7 @@ date: 2026-08-16
 author: FirstCommit
 category: Building
 description: Your first project isn't supposed to impress people. It's supposed to teach you something.
-featured: true
+featured: false
 ---
 
 Your first project is probably going to be bad.

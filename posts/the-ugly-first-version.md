@@ -4,6 +4,7 @@ date: 2026-08-05
 author: FirstCommit
 category: Building
 description: Your first version doesn't need to be beautiful. It needs to exist.
+featured: false
 ---
 
 There is a strange moment when you're building something where you know exactly what it *could* look like, but what you have in front of you looks nothing like it.
