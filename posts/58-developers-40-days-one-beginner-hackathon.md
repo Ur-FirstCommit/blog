@@ -8,3 +8,5 @@ featured: true
 ---
 
 A behind the scenes about how **Beginner's Paradise** went from an idea, to 58 participants and growing in _roughly 2 weeks!_
+
+## The Idea
