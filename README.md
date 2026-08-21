@@ -62,3 +62,6 @@ Settings → Pages → Deploy from branch → `main` → `/root`.
 
 Custom domain:
 `blog.firstcommit.xyz`
+
+## Contribution & Contact
+This page was developed by [Harshil Arora](https://harora.firstcommit.xyz). Please [contact me](mailto:harora@firstcommit.xyz) for questions or concerns.
