@@ -636,7 +636,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 200px;
+  width: 230px;
   padding: 11px 20px;
   background: rgba(14, 16, 20, .75);
   backdrop-filter: blur(24px) saturate(1.4);
@@ -1018,7 +1018,7 @@ body.light .error-desc { color: #888; }
   .nav { padding: 0 16px; }
   .featured-side { display: none; }
   .floating-search { bottom: 20px; }
-  .floating-search-pill { width: 170px; padding: 10px 16px; }
+  .floating-search-pill { width: 200px; padding: 10px 16px; }
   .floating-search-pill.expanded { width: min(360px, calc(100vw - 32px)); }
 }
 
