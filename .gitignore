@@ -1,1 +1,4 @@
 .DS_Store
+session-transcripts/
+.opencode/
+.codex/

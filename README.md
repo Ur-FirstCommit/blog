@@ -1,4 +1,4 @@
-# FirstCommit Markdown Blog
+# FirstCommit Blog
 
 A static HTML/CSS/JS blog that loads Markdown posts from `/posts/`.
 
