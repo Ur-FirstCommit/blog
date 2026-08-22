@@ -38,4 +38,4 @@ Ask before changing the content loading system.
 - Clean reading experience for blog posts
 
 ## Updates
-All updates must be made within the given git branch, you may not commit changes or change branches.
+All updates must be made within the given git branch, you may not commit changes or change branches. If you are within the Default/Main branch, stop making changes and tell the user to create a branch.
