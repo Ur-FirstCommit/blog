@@ -3,11 +3,7 @@
 Static HTML/CSS/JS blog. No framework, no build step, no package.json, no lint/test tooling. Do not run `npm install`, bundlers, or test runners — there are none.
 
 ## Run locally
-Use a static server, never `file://` (the app loads posts via `fetch()`, which fails on `file://`):
-```
-python3 -m http.server 8000
-```
-Then open `http://localhost:8000`.
+Never run locally or create servers, the user will and can do that manually.
 
 ## Adding or editing posts (the main gotcha)
 - Posts live in `posts/*.md` with a hand-rolled YAML-ish front matter block (`title`, `date`, `author`, `category`, `description`, `featured`). See `README.md` for the exact format.
