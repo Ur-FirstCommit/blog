@@ -39,3 +39,10 @@ All updates must be made within the given git branch, you may not commit changes
 ## Change scope
 Make the smallest changes necessary to complete the task.
 Do not rewrite the entire website unless explicitly requested.
+
+## Security
+Never read, expose, or modify:
+- .env files
+- API keys
+- credentials
+- private tokens
