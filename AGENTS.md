@@ -35,3 +35,7 @@ Ask before changing the content loading system.
 
 ## Updates
 All updates must be made within the given git branch, you may not commit changes or change branches. If you are within the Default/Main branch, stop making changes and tell the user to create a branch.
+
+## Change scope
+Make the smallest changes necessary to complete the task.
+Do not rewrite the entire website unless explicitly requested.
