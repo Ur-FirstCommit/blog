@@ -64,3 +64,23 @@ const saved=localStorage.getItem("fc-theme");if(saved==="light")document.body.cl
 document.querySelector("#themeToggle").onclick=()=>{document.body.classList.toggle("light");localStorage.setItem("fc-theme",document.body.classList.contains("light")?"light":"dark")};
 document.querySelector("#year").textContent=new Date().getFullYear();
 loadPosts();
+
+const fsPill=document.querySelector("#floatingPill");
+const fsInput=document.querySelector("#floatingInput");
+const fsResults=document.querySelector("#floatingResults");
+let fsActive=false;
+function fsExpand(){fsPill.classList.add("expanded");fsActive=true;setTimeout(()=>fsInput.focus(),50)}
+function fsCollapse(){if(fsInput.value)return;fsPill.classList.remove("expanded");fsResults.classList.remove("visible");fsResults.innerHTML="";fsActive=false}
+fsPill.addEventListener("click",e=>{if(!fsActive)fsExpand()});
+fsInput.addEventListener("blur",()=>setTimeout(fsCollapse,150));
+fsInput.addEventListener("input",()=>{
+ const q=fsInput.value.toLowerCase().trim();
+ if(!q){fsResults.classList.remove("visible");fsResults.innerHTML="";return}
+ const hits=state.posts.filter(p=>(p.title+" "+p.description+" "+p.category).toLowerCase().includes(q)).slice(0,5);
+ fsResults.innerHTML=hits.length?hits.map(p=>`<a class="fs-result" href="post.html?post=${encodeURIComponent(p.file)}"><small>${esc(p.category||"BUILDING")}</small><b>${esc(p.title)}</b></a>`).join(""):'<div class="fs-empty">No matching stories.</div>';
+ fsResults.classList.add("visible");
+});
+document.addEventListener("keydown",e=>{
+ if((e.metaKey||e.ctrlKey)&&e.key==="/"){e.preventDefault();fsExpand()}
+ if(e.key==="Escape"&&fsActive){fsInput.blur();fsCollapse()}
+});
