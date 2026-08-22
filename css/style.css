@@ -935,6 +935,52 @@ body.light .floating-search-results .fs-result:hover { background: rgba(0, 0, 0,
 body.light .floating-search-results .fs-empty { color: #999; }
 body.light .floating-search-results::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, .12); }
 
+/* --- 404 Page --- */
+.error-page {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 25px 120px;
+  position: relative;
+  z-index: 1;
+}
+.error-content {
+  text-align: center;
+  max-width: 520px;
+}
+.error-code {
+  font-size: clamp(100px, 18vw, 180px);
+  font-weight: 800;
+  letter-spacing: -.06em;
+  line-height: .85;
+  color: rgba(255, 255, 255, .06);
+  margin: 0;
+  user-select: none;
+}
+.error-title {
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 700;
+  letter-spacing: -.04em;
+  margin: 8px 0 18px;
+  color: #e8e9ec;
+}
+.error-desc {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 380px;
+  margin: 0 auto 36px;
+}
+.error-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+body.light .error-code { color: rgba(0, 0, 0, .06); }
+body.light .error-title { color: #111; }
+body.light .error-desc { color: #888; }
+
 .hero, .hero-visual { overflow: hidden; }
 
 @media (max-width: 800px) {
