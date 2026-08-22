@@ -69,10 +69,19 @@ const fsPill=document.querySelector("#floatingPill");
 const fsInput=document.querySelector("#floatingInput");
 const fsResults=document.querySelector("#floatingResults");
 let fsActive=false;
-function fsExpand(){fsPill.classList.add("expanded");fsActive=true;setTimeout(()=>fsInput.focus(),50)}
-function fsCollapse(){if(fsInput.value)return;fsPill.classList.remove("expanded");fsResults.classList.remove("visible");fsResults.innerHTML="";fsActive=false}
-fsPill.addEventListener("click",e=>{if(!fsActive)fsExpand()});
-fsInput.addEventListener("blur",()=>setTimeout(fsCollapse,150));
+function fsExpand(){
+ if(fsActive)return;
+ fsPill.classList.add("expanded");fsActive=true;
+ requestAnimationFrame(()=>setTimeout(()=>fsInput.focus(),120));
+}
+function fsCollapse(){
+ if(fsInput.value)return;
+ fsResults.classList.remove("visible");
+ fsInput.value="";
+ setTimeout(()=>{fsPill.classList.remove("expanded");fsResults.innerHTML="";fsActive=false},40);
+}
+fsPill.addEventListener("click",()=>{if(!fsActive)fsExpand()});
+fsInput.addEventListener("blur",()=>setTimeout(fsCollapse,180));
 fsInput.addEventListener("input",()=>{
  const q=fsInput.value.toLowerCase().trim();
  if(!q){fsResults.classList.remove("visible");fsResults.innerHTML="";return}
