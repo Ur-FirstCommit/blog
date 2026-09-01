@@ -2,3 +2,4 @@
 session-transcripts/
 .opencode/
 .codex/
+.env.local
